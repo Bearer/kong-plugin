@@ -50,3 +50,19 @@ $ export KONG_PLUGINS=bundled,bearer
 ```sh
 $ luarocks --lua-dir <path_to_luajit> build --pack-binary-rock
 ```
+
+### Releasing
+
+Update the tag, version and filename of the `.rockspec`, and create a corresponding Github release.
+
+To upload the rock, you need a JSON library installed:
+
+```sh
+$ luarocks install dkjson
+```
+
+To upload the rock:
+
+```sh
+$ luarocks --lua-dir <path_to_luajit> upload --api-key=<api_key> kong-plugin-bearer-<version>-1.rockspec
+```
